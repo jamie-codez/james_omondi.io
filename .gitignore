@@ -38,3 +38,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE Files
+.idea
+.vscode
+
+# Lock files
+yarn.lock
+
+# Cert Files
+certs
