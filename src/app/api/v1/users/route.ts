@@ -8,6 +8,7 @@ export const POST = async (request: NextRequest) => {
         const body = await request.json();
         await connect();
         const user = await User.create({...request.body});
+        await user.save(); 
         if (!user) return NextResponse.json({statusCode:500,statusMessage:"Internal server error",message:"Error creating user",data:body.message},{status:500,statusText:"Internal server error."})
         return NextResponse.json({statusCode:201,statusMessage:"Created",message:"Created successfully",data:user},{status:201,statusText:"Created"})
     }catch (error) {
